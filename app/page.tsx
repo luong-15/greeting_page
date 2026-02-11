@@ -373,35 +373,35 @@ export default function NewYearGreeting() {
                 <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 text-lg sm:text-xl opacity-60 animate-spin" style={{ animationDuration: '3s', animationDelay: '1.5s' }}>✦</div>
 
                 {/* Open State - Card Inner Content */}
-                <div className="relative space-y-4 sm:space-y-5 md:space-y-6 text-center px-2 sm:px-4 max-h-96 sm:max-h-full overflow-y-auto">
+                <div className="relative space-y-2 sm:space-y-3 text-center px-3 sm:px-4 flex flex-col justify-center h-full">
                   {/* Main Greeting Title */}
-                  <div className="space-y-1 sm:space-y-2">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300 drop-shadow-lg">
+                  <div className="space-y-0.5 sm:space-y-1">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-300 drop-shadow-lg leading-tight">
                       Chúc Mừng Năm Mới
                     </h3>
-                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-red-100 drop-shadow-md">
+                    <p className="text-base sm:text-lg md:text-xl font-bold text-red-100 drop-shadow-md leading-tight">
                       Năm Bình Ngọ 2026
                     </p>
                   </div>
 
                   {/* Main Wish Message */}
-                  <div className="bg-yellow-100 bg-opacity-90 rounded-lg sm:rounded-xl py-3 sm:py-4 px-4 sm:px-5 shadow-md border-2 border-red-400">
-                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-red-700">
+                  <div className="bg-yellow-100 bg-opacity-90 rounded-lg sm:rounded-lg py-2 sm:py-2.5 px-3 sm:px-4 shadow-md border-2 border-red-400">
+                    <p className="text-base sm:text-lg md:text-xl font-bold text-red-700 leading-tight">
                       Vạn Sự Như Ý
                     </p>
-                    <p className="text-base sm:text-lg text-red-600 font-medium mt-1 sm:mt-2">
+                    <p className="text-xs sm:text-sm md:text-base text-red-600 font-medium mt-0.5">
                       Mọi điều như ý muốn
                     </p>
                   </div>
 
                   {/* Blessings Section - Merged into one box */}
-                  <div className="bg-gradient-to-r from-yellow-100 to-amber-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border-2 border-red-300 shadow-md">
+                  <div className="bg-gradient-to-r from-yellow-100 to-amber-50 rounded-lg p-2 sm:p-3 border-2 border-red-300 shadow-md">
                     {blessings.map((blessing, index) => (
-                      <div key={index} className="mb-2 last:mb-0">
-                        <h4 className="text-base sm:text-lg md:text-xl font-bold text-red-700">
+                      <div key={index} className="mb-1 last:mb-0">
+                        <h4 className="text-sm sm:text-base md:text-lg font-bold text-red-700 leading-tight">
                           {blessing.title}
                         </h4>
-                        <p className="text-sm sm:text-base text-red-600 mt-1">
+                        <p className="text-xs sm:text-sm text-red-600 leading-snug">
                           {blessing.text}
                         </p>
                       </div>
@@ -409,13 +409,13 @@ export default function NewYearGreeting() {
                   </div>
 
                   {/* QR Code Section */}
-                  <div className="flex flex-col items-center space-y-2 sm:space-y-3">
-                    <p className="text-base sm:text-lg md:text-xl font-bold text-yellow-300 drop-shadow-md">
+                  <div className="flex flex-col items-center space-y-1">
+                    <p className="text-xs sm:text-sm md:text-base font-bold text-yellow-300 drop-shadow-md leading-tight">
                       Gửi chút lộc đầu năm
                     </p>
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white border-4 border-red-400 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden flex-shrink-0">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white border-3 border-red-400 rounded-lg flex items-center justify-center shadow-lg overflow-hidden flex-shrink-0">
                       <img
-                        src="/placeholder.svg?height=128&width=128"
+                        src="/placeholder.svg?height=96&width=96"
                         alt="QR Code"
                         className="w-full h-full object-cover"
                       />
@@ -423,14 +423,14 @@ export default function NewYearGreeting() {
                   </div>
 
                   {/* Closing Message */}
-                  <div className="space-y-1 sm:space-y-2">
-                    <p className="text-xs sm:text-sm md:text-base text-yellow-200 drop-shadow-md font-semibold animate-pulse">
+                  <div className="space-y-0.5">
+                    <p className="text-xs sm:text-xs md:text-sm text-yellow-200 drop-shadow-md font-semibold animate-pulse leading-tight">
                       Gửi đến người thương yêu của anh
                     </p>
-                    <p className="text-sm sm:text-base md:text-lg font-bold text-yellow-300 drop-shadow-md animate-bounce">
+                    <p className="text-xs sm:text-sm md:text-base font-bold text-yellow-300 drop-shadow-md animate-bounce leading-tight">
                       Yêu Thương • Hạnh Phúc • Bên Nhau
                     </p>
-                    <p className="text-xs sm:text-sm md:text-base text-yellow-200 drop-shadow-md font-medium animate-pulse" style={{ animationDelay: '1s' }}>
+                    <p className="text-xs sm:text-xs md:text-sm text-yellow-200 drop-shadow-md font-medium animate-pulse leading-tight" style={{ animationDelay: '1s' }}>
                       Năm mới Bình Ngọ 2026 - Tình yêu vĩnh cửu
                     </p>
                   </div>
