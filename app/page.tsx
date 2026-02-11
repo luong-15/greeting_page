@@ -253,22 +253,22 @@ export default function NewYearGreeting() {
       </audio>
 
       {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-6 sm:py-8 md:py-10 overflow-hidden">
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-3 sm:px-4 py-3 sm:py-4 md:py-6 overflow-hidden">
         {/* Header Section */}
-        <div className="mb-6 sm:mb-8 md:mb-12 text-center space-y-3 sm:space-y-4">
-          <p className="text-base sm:text-lg md:text-2xl text-yellow-300 font-semibold drop-shadow-md tracking-widest">
+        <div className="mb-3 sm:mb-4 md:mb-6 text-center space-y-1.5 sm:space-y-2">
+          <p className="text-xs sm:text-sm md:text-lg text-yellow-300 font-semibold drop-shadow-md tracking-widest">
             ✨ Chào mừng năm mới ✨
           </p>
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-200 to-red-200 drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-200 to-red-200 drop-shadow-lg">
             2026
           </h1>
         </div>
 
         {/* Greeting Card Section */}
-        <div className="w-full max-w-2xl lg:max-w-4xl mb-6 sm:mb-8 px-0 relative">
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl mb-4 sm:mb-5 px-0 relative">
 
           <div
-            className="card-container relative w-full h-auto min-h-80 sm:min-h-96 md:min-h-[28rem] lg:min-h-[32rem] cursor-pointer"
+            className="card-container relative w-full h-auto min-h-80 sm:min-h-80 md:min-h-96 lg:min-h-[28rem] cursor-pointer"
             onClick={() => setIsCardOpen(!isCardOpen)}
             style={{
               perspective: '1200px',
@@ -286,7 +286,7 @@ export default function NewYearGreeting() {
             >
               {/* Front - Closed State */}
               <div
-                className="absolute w-full h-full bg-gradient-to-br from-red-600 via-red-700 to-amber-700 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col p-6 sm:p-8 md:p-10"
+                className="absolute w-full h-full bg-gradient-to-br from-red-600 via-red-700 to-amber-700 rounded-2xl sm:rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col p-4 sm:p-5 md:p-8"
                 style={{
                   backfaceVisibility: 'hidden',
                   transformStyle: 'preserve-3d',
@@ -356,7 +356,7 @@ export default function NewYearGreeting() {
 
               {/* Back - Open State */}
               <div
-                className="absolute w-full h-full bg-gradient-to-br from-red-600 via-red-700 to-amber-700 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-center p-6 sm:p-8 md:p-10"
+                className="absolute w-full h-full bg-gradient-to-br from-red-600 via-red-700 to-amber-700 rounded-2xl sm:rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-center p-4 sm:p-5 md:p-8"
                 style={{
                   backfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)',
