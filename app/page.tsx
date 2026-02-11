@@ -229,18 +229,18 @@ export default function NewYearGreeting() {
 
       {/* Decorative elements */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute top-0 left-1/4 w-48 h-48 md:w-96 md:h-96 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
       </div>
 
       {/* Music Toggle Button */}
       <button
         onClick={toggleAudio}
-        className="fixed top-[4vw] right-[4vw] sm:top-[3vw] sm:right-[3vw] z-20 bg-gradient-to-r from-red-600 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-white font-bold py-[1vw] px-[2vw] sm:py-[1.5vw] sm:px-[3vw] rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-[0.5vw] sm:gap-[1vw]"
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-20 bg-gradient-to-r from-red-600 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-white font-bold py-2 px-3 sm:py-3 sm:px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
         aria-label="Toggle background music"
       >
-        <span className="text-[4vw] sm:text-[3vw]">{isPlaying ? '🔊' : '🔇'}</span>
-        <span className="hidden sm:inline text-[3vw] sm:text-[2.5vw]">{isPlaying ? 'Tắt nhạc' : 'Bật nhạc'}</span>
+        <span className="text-lg sm:text-2xl">{isPlaying ? '🔊' : '🔇'}</span>
+        <span className="hidden sm:inline text-sm sm:text-base">{isPlaying ? 'Tắt nhạc' : 'Bật nhạc'}</span>
       </button>
 
       {/* Audio element */}
@@ -253,22 +253,22 @@ export default function NewYearGreeting() {
       </audio>
 
       {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-[2vh] sm:py-[3vh] md:py-[4vh] overflow-hidden">
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-6 sm:py-8 md:py-10 overflow-hidden">
         {/* Header Section */}
-        <div className="mb-[4vh] sm:mb-[6vh] md:mb-[8vh] text-center space-y-[1vh] sm:space-y-[2vh]">
-          <p className="text-[3vw] sm:text-[2.5vw] md:text-[2vw] text-yellow-300 font-semibold drop-shadow-md tracking-widest">
+        <div className="mb-6 sm:mb-8 md:mb-12 text-center space-y-3 sm:space-y-4">
+          <p className="text-base sm:text-lg md:text-2xl text-yellow-300 font-semibold drop-shadow-md tracking-widest">
             ✨ Chào mừng năm mới ✨
           </p>
-          <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] xl:text-[6vw] font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-200 to-red-200 drop-shadow-lg">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-200 to-red-200 drop-shadow-lg">
             2026
           </h1>
         </div>
 
         {/* Greeting Card Section */}
-        <div className="w-full max-w-4xl mb-[4vh] sm:mb-[6vh] px-4 relative">
+        <div className="w-full max-w-2xl lg:max-w-4xl mb-6 sm:mb-8 px-0 relative">
 
           <div
-            className="card-container relative w-full h-auto min-h-[60vh] sm:min-h-[65vh] md:min-h-[70vh] lg:min-h-[75vh] xl:min-h-[80vh] cursor-pointer"
+            className="card-container relative w-full h-auto min-h-80 sm:min-h-96 md:min-h-[28rem] lg:min-h-[32rem] cursor-pointer"
             onClick={() => setIsCardOpen(!isCardOpen)}
             style={{
               perspective: '1200px',
@@ -286,67 +286,67 @@ export default function NewYearGreeting() {
             >
               {/* Front - Closed State */}
               <div
-                className="absolute w-full h-full bg-gradient-to-br from-red-600 via-red-700 to-amber-700 rounded-[3vw] shadow-2xl overflow-hidden flex flex-col p-[6vw] sm:p-[8vw] md:p-[10vw]"
+                className="absolute w-full h-full bg-gradient-to-br from-red-600 via-red-700 to-amber-700 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col p-6 sm:p-8 md:p-10"
                 style={{
                   backfaceVisibility: 'hidden',
                   transformStyle: 'preserve-3d',
                 }}
               >
                 {/* Decorative border with glow effect */}
-                <div className="absolute inset-0 border-4 border-yellow-400 rounded-3xl opacity-20 pointer-events-none animate-pulse"></div>
-                <div className="absolute inset-0 border-2 border-yellow-300 rounded-3xl opacity-30 pointer-events-none" style={{
+                <div className="absolute inset-0 border-4 border-yellow-400 rounded-2xl sm:rounded-3xl opacity-20 pointer-events-none animate-pulse"></div>
+                <div className="absolute inset-0 border-2 border-yellow-300 rounded-2xl sm:rounded-3xl opacity-30 pointer-events-none" style={{
                   animation: 'glow 2s ease-in-out infinite alternate'
                 }}></div>
                 {/* Sparkle effects around border */}
-                <div className="absolute -top-2 -left-2 text-yellow-300 text-xl animate-bounce">✦</div>
-                <div className="absolute -top-2 -right-2 text-yellow-300 text-xl animate-bounce" style={{ animationDelay: '0.5s' }}>✦</div>
-                <div className="absolute -bottom-2 -left-2 text-yellow-300 text-xl animate-bounce" style={{ animationDelay: '1s' }}>✦</div>
-                <div className="absolute -bottom-2 -right-2 text-yellow-300 text-xl animate-bounce" style={{ animationDelay: '1.5s' }}>✦</div>
+                <div className="absolute -top-1 -left-1 text-yellow-300 text-sm animate-bounce">✦</div>
+                <div className="absolute -top-1 -right-1 text-yellow-300 text-sm animate-bounce" style={{ animationDelay: '0.5s' }}>✦</div>
+                <div className="absolute -bottom-1 -left-1 text-yellow-300 text-sm animate-bounce" style={{ animationDelay: '1s' }}>✦</div>
+                <div className="absolute -bottom-1 -right-1 text-yellow-300 text-sm animate-bounce" style={{ animationDelay: '1.5s' }}>✦</div>
                 
                 {/* Decorative corner ornaments */}
-                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 text-2xl sm:text-3xl opacity-70">✦</div>
-                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 text-2xl sm:text-3xl opacity-70">✦</div>
-                <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 text-2xl sm:text-3xl opacity-70">✦</div>
-                <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 text-2xl sm:text-3xl opacity-70">✦</div>
+                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 text-xl sm:text-2xl opacity-70">✦</div>
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 text-xl sm:text-2xl opacity-70">✦</div>
+                <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 text-xl sm:text-2xl opacity-70">✦</div>
+                <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 text-xl sm:text-2xl opacity-70">✦</div>
                 
                 {/* Closed State - Card Back Content */}
-                <div className="text-center space-y-[3vh] sm:space-y-[4vh] flex flex-col justify-center h-full">
+                <div className="text-center space-y-4 sm:space-y-6 flex flex-col justify-center h-full">
                   {/* Top Decoration - Ornate */}
-                  <div className="space-y-[2vh] sm:space-y-[3vh]">
-                    <div className="text-[8vw] sm:text-[6vw] md:text-[5vw] drop-shadow-lg animate-bounce">🎐</div>
-                    <div className="h-[0.5vh] bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full opacity-40"></div>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="text-5xl sm:text-6xl md:text-7xl drop-shadow-lg animate-bounce">🎐</div>
+                    <div className="h-0.5 bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full opacity-40"></div>
                   </div>
 
                   {/* Main Content */}
-                  <div className="space-y-[1vh] sm:space-y-[2vh]">
-                    <h2 className="text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3.5vw] xl:text-[3vw] font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-200 drop-shadow-lg leading-tight">
+                  <div className="space-y-2 sm:space-y-3">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-200 drop-shadow-lg leading-tight">
                       2026
                     </h2>
-                    <div className="space-y-[0.5vh] sm:space-y-[1vh]">
-                      <p className="text-[4vw] sm:text-[3.5vw] md:text-[3vw] lg:text-[2.5vw] xl:text-[2vw] font-bold text-yellow-300 drop-shadow-md">
+                    <div className="space-y-1 sm:space-y-2">
+                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-300 drop-shadow-md">
                         Năm của Bình Ngọ
                       </p>
-                      <p className="text-[3vw] sm:text-[2.5vw] text-yellow-200 font-medium">
+                      <p className="text-base sm:text-lg text-yellow-200 font-medium">
                         Year of the Horse
                       </p>
                     </div>
                   </div>
 
                   {/* Decorative divider */}
-                  <div className="h-[0.5vh] bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full opacity-40"></div>
+                  <div className="h-0.5 bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full opacity-40"></div>
 
                   {/* Action Button */}
-                  <div className="space-y-[1vh] sm:space-y-[2vh]">
-                    <button className="inline-block bg-gradient-to-r from-yellow-300 to-yellow-200 text-red-800 font-bold py-[1vh] px-[4vw] sm:py-[1.5vh] sm:px-[6vw] rounded-full shadow-lg hover:from-yellow-200 hover:to-yellow-100 transition-all duration-300 transform hover:scale-105 text-[3.5vw] sm:text-[3vw] md:text-[2.5vw] leading-none">
+                  <div className="space-y-2 sm:space-y-3">
+                    <button className="inline-block bg-gradient-to-r from-yellow-300 to-yellow-200 text-red-800 font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full shadow-lg hover:from-yellow-200 hover:to-yellow-100 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base md:text-lg">
                       Mở Thư
                     </button>
-                    <p className="text-yellow-300 text-[3vw] sm:text-[2.5vw] font-semibold drop-shadow-md leading-tight">
+                    <p className="text-yellow-300 text-sm sm:text-base font-semibold drop-shadow-md">
                       Nhấp để mở lời chúc mừng
                     </p>
                   </div>
 
                   {/* Bottom Decoration */}
-                  <div className="flex justify-center gap-[2vw] sm:gap-[3vw] text-[5vw] sm:text-[4vw] md:text-[3vw] opacity-50">
+                  <div className="flex justify-center gap-4 sm:gap-6 text-3xl sm:text-4xl md:text-5xl opacity-50">
                     <span>🧧</span>
                     <span>🎊</span>
                     <span>🧧</span>
@@ -356,7 +356,7 @@ export default function NewYearGreeting() {
 
               {/* Back - Open State */}
               <div
-                className="absolute w-full h-full bg-gradient-to-br from-red-600 via-red-700 to-amber-700 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-center p-7 sm:p-11"
+                className="absolute w-full h-full bg-gradient-to-br from-red-600 via-red-700 to-amber-700 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-center p-6 sm:p-8 md:p-10"
                 style={{
                   backfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)',
@@ -364,44 +364,44 @@ export default function NewYearGreeting() {
                 }}
               >
                 {/* Decorative border */}
-                <div className="absolute inset-0 border-4 border-yellow-400 rounded-3xl opacity-20 pointer-events-none"></div>
+                <div className="absolute inset-0 border-4 border-yellow-400 rounded-2xl sm:rounded-3xl opacity-20 pointer-events-none"></div>
                 
                 {/* Decorative corner ornaments */}
-                <div className="absolute top-[4vw] left-[4vw] text-[2vw] opacity-60 animate-spin" style={{ animationDuration: '3s' }}>✦</div>
-                <div className="absolute top-[4vw] right-[4vw] text-[2vw] opacity-60 animate-spin" style={{ animationDuration: '3s', animationDelay: '0.5s' }}>✦</div>
-                <div className="absolute bottom-[4vw] left-[4vw] text-[2vw] opacity-60 animate-spin" style={{ animationDuration: '3s', animationDelay: '1s' }}>✦</div>
-                <div className="absolute bottom-[4vw] right-[4vw] text-[2vw] opacity-60 animate-spin" style={{ animationDuration: '3s', animationDelay: '1.5s' }}>✦</div>
+                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 text-lg sm:text-xl opacity-60 animate-spin" style={{ animationDuration: '3s' }}>✦</div>
+                <div className="absolute top-4 right-4 sm:top-6 sm:right-6 text-lg sm:text-xl opacity-60 animate-spin" style={{ animationDuration: '3s', animationDelay: '0.5s' }}>✦</div>
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-lg sm:text-xl opacity-60 animate-spin" style={{ animationDuration: '3s', animationDelay: '1s' }}>✦</div>
+                <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 text-lg sm:text-xl opacity-60 animate-spin" style={{ animationDuration: '3s', animationDelay: '1.5s' }}>✦</div>
 
                 {/* Open State - Card Inner Content */}
-                <div className="relative space-y-[2vh] sm:space-y-[3vh] text-center px-[2vw] sm:px-[4vw]">
+                <div className="relative space-y-4 sm:space-y-5 md:space-y-6 text-center px-2 sm:px-4 max-h-96 sm:max-h-full overflow-y-auto">
                   {/* Main Greeting Title */}
-                  <div className="space-y-[0.5vh] sm:space-y-[1vh]">
-                    <h3 className="text-[5vw] sm:text-[4vw] md:text-[3vw] font-bold text-yellow-300 drop-shadow-lg">
+                  <div className="space-y-1 sm:space-y-2">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300 drop-shadow-lg">
                       Chúc Mừng Năm Mới
                     </h3>
-                    <p className="text-[4vw] sm:text-[3.5vw] md:text-[3vw] font-bold text-red-100 drop-shadow-md">
+                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-red-100 drop-shadow-md">
                       Năm Bình Ngọ 2026
                     </p>
                   </div>
 
                   {/* Main Wish Message */}
-                  <div className="bg-yellow-100 bg-opacity-90 rounded-[2vw] sm:rounded-[2.5vw] py-[2vh] sm:py-[3vh] px-[3vw] sm:px-[4vw] shadow-md border-2 border-red-400 mx-[1vw] sm:mx-[2vw]">
-                    <p className="text-[4vw] sm:text-[3.5vw] md:text-[3vw] font-bold text-red-700 leading-tight">
+                  <div className="bg-yellow-100 bg-opacity-90 rounded-lg sm:rounded-xl py-3 sm:py-4 px-4 sm:px-5 shadow-md border-2 border-red-400">
+                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-red-700">
                       Vạn Sự Như Ý
                     </p>
-                    <p className="text-[3vw] sm:text-[2.5vw] text-red-600 font-medium mt-[1vh]">
+                    <p className="text-base sm:text-lg text-red-600 font-medium mt-1 sm:mt-2">
                       Mọi điều như ý muốn
                     </p>
                   </div>
 
                   {/* Blessings Section - Merged into one box */}
-                  <div className="bg-gradient-to-r from-yellow-100 to-amber-50 rounded-[2vw] sm:rounded-[2.5vw] p-[2vw] sm:p-[3vw] border-2 border-red-300 shadow-md mx-[1vw] sm:mx-[2vw]">
+                  <div className="bg-gradient-to-r from-yellow-100 to-amber-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border-2 border-red-300 shadow-md">
                     {blessings.map((blessing, index) => (
-                      <div key={index} className="mb-[1vh] sm:mb-[2vh] last:mb-0">
-                        <h4 className="text-[3.5vw] sm:text-[3vw] md:text-[2.5vw] font-bold text-red-700 leading-tight">
+                      <div key={index} className="mb-2 last:mb-0">
+                        <h4 className="text-base sm:text-lg md:text-xl font-bold text-red-700">
                           {blessing.title}
                         </h4>
-                        <p className="text-[3vw] sm:text-[2.5vw] text-red-600 leading-snug mt-[0.5vh] sm:mt-[1vh]">
+                        <p className="text-sm sm:text-base text-red-600 mt-1">
                           {blessing.text}
                         </p>
                       </div>
@@ -409,11 +409,11 @@ export default function NewYearGreeting() {
                   </div>
 
                   {/* QR Code Section */}
-                  <div className="flex flex-col items-center space-y-[1vh] sm:space-y-[2vh]">
-                    <p className="text-[4vw] sm:text-[3.5vw] md:text-[3vw] font-bold text-yellow-300 drop-shadow-md">
+                  <div className="flex flex-col items-center space-y-2 sm:space-y-3">
+                    <p className="text-base sm:text-lg md:text-xl font-bold text-yellow-300 drop-shadow-md">
                       Gửi chút lộc đầu năm
                     </p>
-                    <div className="w-[20vw] h-[20vw] sm:w-[24vw] sm:h-[24vw] max-w-[8rem] max-h-[8rem] bg-white border-4 border-red-400 rounded-[2vw] sm:rounded-[2.5vw] flex items-center justify-center shadow-lg overflow-hidden flex-shrink-0">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white border-4 border-red-400 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden flex-shrink-0">
                       <img
                         src="/placeholder.svg?height=128&width=128"
                         alt="QR Code"
@@ -423,14 +423,14 @@ export default function NewYearGreeting() {
                   </div>
 
                   {/* Closing Message */}
-                  <div className="space-y-[0.5vh] sm:space-y-[1vh]">
-                    <p className="text-[3vw] sm:text-[2.5vw] text-yellow-200 drop-shadow-md font-semibold animate-pulse">
+                  <div className="space-y-1 sm:space-y-2">
+                    <p className="text-xs sm:text-sm md:text-base text-yellow-200 drop-shadow-md font-semibold animate-pulse">
                       Gửi đến người thương yêu của anh
                     </p>
-                    <p className="text-[4vw] sm:text-[3.5vw] font-bold text-yellow-300 drop-shadow-md animate-bounce">
+                    <p className="text-sm sm:text-base md:text-lg font-bold text-yellow-300 drop-shadow-md animate-bounce">
                       Yêu Thương • Hạnh Phúc • Bên Nhau
                     </p>
-                    <p className="text-[3vw] sm:text-[2.5vw] text-yellow-200 drop-shadow-md font-medium animate-pulse" style={{ animationDelay: '1s' }}>
+                    <p className="text-xs sm:text-sm md:text-base text-yellow-200 drop-shadow-md font-medium animate-pulse" style={{ animationDelay: '1s' }}>
                       Năm mới Bình Ngọ 2026 - Tình yêu vĩnh cửu
                     </p>
                   </div>
