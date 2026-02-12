@@ -29,11 +29,11 @@ export default function NewYearGreeting() {
       const dpr = window.devicePixelRatio || 1;
       const width = window.innerWidth;
       const height = window.innerHeight;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      ctx.scale(dpr, dpr);
-      canvas.style.width = width + 'px';
-      canvas.style.height = height + 'px';
+      canvas!.width = width * dpr;
+      canvas!.height = height * dpr;
+      ctx!.scale(dpr, dpr);
+      canvas!.style.width = width + 'px';
+      canvas!.style.height = height + 'px';
     };
 
     updateCanvasSize();
@@ -51,8 +51,8 @@ export default function NewYearGreeting() {
     }> = [];
 
     function createFirework() {
-      const x = Math.random() * canvas.width;
-      const y = Math.random() * canvas.height * 0.6;
+      const x = Math.random() * canvas!.width;
+      const y = Math.random() * canvas!.height * 0.6;
       const colors = ['#FFD700', '#DC143C', '#FF6B6B', '#FFB6C1'];
       const color = colors[Math.floor(Math.random() * colors.length)];
 
@@ -74,7 +74,7 @@ export default function NewYearGreeting() {
     }
 
     function createBlossom() {
-      const x = Math.random() * canvas.width;
+      const x = Math.random() * canvas!.width;
       const y = -10;
       const colors = ['#FFB6C1', '#FF69B4', '#FFC0CB', '#FF1493']; // Pink colors for peach blossoms
       const color = colors[Math.floor(Math.random() * colors.length)];
@@ -93,8 +93,8 @@ export default function NewYearGreeting() {
     }
 
     function createHeart() {
-      const x = Math.random() * canvas.width;
-      const y = canvas.height + 20;
+      const x = Math.random() * canvas!.width;
+      const y = canvas!.height + 20;
       const colors = ['#FFFFFF', '#FFFF00', '#FFD700', '#FFA500'];
       const color = colors[Math.floor(Math.random() * colors.length)];
 
@@ -112,7 +112,7 @@ export default function NewYearGreeting() {
     }
 
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
 
       // Create new particles occasionally
       if (Math.random() < 0.2) {
@@ -146,50 +146,50 @@ export default function NewYearGreeting() {
         }
 
         const opacity = 1 - p.age / p.life;
-        ctx.fillStyle = p.color + Math.floor(opacity * 255).toString(16).padStart(2, '0');
+        ctx!.fillStyle = p.color + Math.floor(opacity * 255).toString(16).padStart(2, '0');
 
         if (p.type === 'heart') {
           // Draw heart shape
-          ctx.save();
-          ctx.translate(p.x, p.y);
-          ctx.scale(p.radius / 10, p.radius / 10);
-          ctx.beginPath();
-          ctx.moveTo(0, 3);
-          ctx.bezierCurveTo(0, 1.5, -1.5, 0, -3, 0);
-          ctx.bezierCurveTo(-6, 0, -6, 3.75, -6, 3.75);
-          ctx.bezierCurveTo(-6, 6, -3, 9, 0, 12);
-          ctx.bezierCurveTo(3, 9, 6, 6, 6, 3.75);
-          ctx.bezierCurveTo(6, 3.75, 6, 0, 3, 0);
-          ctx.bezierCurveTo(1.5, 0, 0, 1.5, 0, 3);
-          ctx.fill();
-          ctx.restore();
+          ctx!.save();
+          ctx!.translate(p.x, p.y);
+          ctx!.scale(p.radius / 10, p.radius / 10);
+          ctx!.beginPath();
+          ctx!.moveTo(0, 3);
+          ctx!.bezierCurveTo(0, 1.5, -1.5, 0, -3, 0);
+          ctx!.bezierCurveTo(-6, 0, -6, 3.75, -6, 3.75);
+          ctx!.bezierCurveTo(-6, 6, -3, 9, 0, 12);
+          ctx!.bezierCurveTo(3, 9, 6, 6, 6, 3.75);
+          ctx!.bezierCurveTo(6, 3.75, 6, 0, 3, 0);
+          ctx!.bezierCurveTo(1.5, 0, 0, 1.5, 0, 3);
+          ctx!.fill();
+          ctx!.restore();
         } else if (p.type === 'blossom') {
           // Draw peach blossom with 5 petals
-          ctx.save();
-          ctx.translate(p.x, p.y);
-          ctx.fillStyle = p.color;
+          ctx!.save();
+          ctx!.translate(p.x, p.y);
+          ctx!.fillStyle = p.color;
           const petalRadius = p.radius * 0.4;
           const centerRadius = p.radius * 0.2;
 
           // Draw center
-          ctx.beginPath();
-          ctx.arc(0, 0, centerRadius, 0, Math.PI * 2);
-          ctx.fill();
+          ctx!.beginPath();
+          ctx!.arc(0, 0, centerRadius, 0, Math.PI * 2);
+          ctx!.fill();
 
           // Draw 5 petals
           for (let i = 0; i < 5; i++) {
             const angle = (i * Math.PI * 2) / 5;
             const petalX = Math.cos(angle) * p.radius * 0.6;
             const petalY = Math.sin(angle) * p.radius * 0.6;
-            ctx.beginPath();
-            ctx.arc(petalX, petalY, petalRadius, 0, Math.PI * 2);
-            ctx.fill();
+            ctx!.beginPath();
+            ctx!.arc(petalX, petalY, petalRadius, 0, Math.PI * 2);
+            ctx!.fill();
           }
-          ctx.restore();
+          ctx!.restore();
         } else {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fill();
+          ctx!.beginPath();
+          ctx!.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx!.fill();
         }
       }
 
@@ -415,7 +415,7 @@ export default function NewYearGreeting() {
                     </p>
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white border-2 border-red-400 rounded flex items-center justify-center shadow-lg overflow-hidden flex-shrink-0">
                       <img
-                        src="/placeholder.svg?height=80&width=80"
+                        src="/assets/qrcode.png" // Updated path to public/assets/qrcode.png
                         alt="QR Code"
                         className="w-full h-full object-cover"
                       />
