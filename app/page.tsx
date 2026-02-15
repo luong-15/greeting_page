@@ -4,15 +4,14 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const blessings = [
   {
-    title: 'Tình Yêu Vĩnh Cửu',
-    text: 'Tình yêu chúng ta mãi bền vững, như dòng sông chảy mãi không ngừng, bên nhau đến cuối đời'
+    title: 'Happy New Year bé iu của anh 😘',
+    text: 'Cám ơn bé đã xuất hiện và tô thêm những màu sắc rực rỡ nhất vào thế giới của anh. Năm nay, năm sau và thật nhiều năm sau này nữa, mình cứ nắm tay nhau thật chặt, cùng đi ăn ngon, cùng ngắm cảnh đẹp và cùng nhau già đi nha bé. Anh iu bé nhất trên đời!'
   }
 ];
 
 export default function NewYearGreeting() {
   const [isCardOpen, setIsCardOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isQRModalOpen, setIsQRModalOpen] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [currentWish, setCurrentWish] = useState(0);
 
@@ -206,19 +205,6 @@ export default function NewYearGreeting() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const toggleAudio = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(() => {
-          // Audio playback failed, but continue
-        });
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
     <div className="min-h-screen overflow-hidden bg-gradient-to-br from-red-950 via-red-900 to-amber-900 relative">
       {/* Canvas for animations */}
@@ -233,31 +219,12 @@ export default function NewYearGreeting() {
         <div className="absolute bottom-0 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
       </div>
 
-      {/* Music Toggle Button */}
-      <button
-        onClick={toggleAudio}
-        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-20 bg-gradient-to-r from-red-600 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-white font-bold py-2 px-3 sm:py-3 sm:px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-        aria-label="Toggle background music"
-      >
-        <span className="text-lg sm:text-2xl">{isPlaying ? '🔊' : '🔇'}</span>
-        <span className="hidden sm:inline text-sm sm:text-base">{isPlaying ? 'Tắt nhạc' : 'Bật nhạc'}</span>
-      </button>
-
-      {/* Audio element */}
-      <audio
-        ref={audioRef}
-        loop
-        crossOrigin="anonymous"
-      >
-        {/* Replace with actual festive audio source */}
-      </audio>
-
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-3 py-4 sm:py-6 md:py-8 overflow-hidden">
         {/* Header Section */}
         <div className="mb-4 sm:mb-5 md:mb-6 text-center space-y-1 sm:space-y-2">
           <p className="text-xs sm:text-sm md:text-base text-yellow-300 font-semibold drop-shadow-md tracking-widest">
-            ✨ Chào mừng năm mới ✨
+            ✨ Happy New Year ✨
           </p>
           <h1 className="text-5xl sm:text-6xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-200 to-red-200 drop-shadow-lg">
             2026
@@ -297,18 +264,13 @@ export default function NewYearGreeting() {
                 <div className="absolute inset-0 border-2 border-yellow-300 rounded-2xl sm:rounded-3xl opacity-30 pointer-events-none" style={{
                   animation: 'glow 2s ease-in-out infinite alternate'
                 }}></div>
-                {/* Sparkle effects around border */}
-                <div className="absolute -top-1 -left-1 text-yellow-300 text-sm animate-bounce">✦</div>
-                <div className="absolute -top-1 -right-1 text-yellow-300 text-sm animate-bounce" style={{ animationDelay: '0.5s' }}>✦</div>
-                <div className="absolute -bottom-1 -left-1 text-yellow-300 text-sm animate-bounce" style={{ animationDelay: '1s' }}>✦</div>
-                <div className="absolute -bottom-1 -right-1 text-yellow-300 text-sm animate-bounce" style={{ animationDelay: '1.5s' }}>✦</div>
-                
+
                 {/* Decorative corner ornaments */}
                 <div className="absolute top-2 left-2 sm:top-4 sm:left-4 text-xl sm:text-2xl opacity-70">✦</div>
                 <div className="absolute top-2 right-2 sm:top-4 sm:right-4 text-xl sm:text-2xl opacity-70">✦</div>
                 <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 text-xl sm:text-2xl opacity-70">✦</div>
                 <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 text-xl sm:text-2xl opacity-70">✦</div>
-                
+
                 {/* Closed State - Card Back Content */}
                 <div className="text-center space-y-3 sm:space-y-4 flex flex-col justify-center h-full">
                   {/* Top Decoration - Ornate */}
@@ -365,7 +327,7 @@ export default function NewYearGreeting() {
               >
                 {/* Decorative border */}
                 <div className="absolute inset-0 border-4 border-yellow-400 rounded-2xl sm:rounded-3xl opacity-20 pointer-events-none"></div>
-                
+
                 {/* Decorative corner ornaments */}
                 <div className="absolute top-4 left-4 sm:top-6 sm:left-6 text-lg sm:text-xl opacity-60 animate-spin" style={{ animationDuration: '3s' }}>✦</div>
                 <div className="absolute top-4 right-4 sm:top-6 sm:right-6 text-lg sm:text-xl opacity-60 animate-spin" style={{ animationDuration: '3s', animationDelay: '0.5s' }}>✦</div>
@@ -384,24 +346,14 @@ export default function NewYearGreeting() {
                     </p>
                   </div>
 
-                  {/* Main Wish Message */}
-                  <div className="bg-yellow-100 bg-opacity-90 rounded-md py-1.5 sm:py-2 px-3 shadow-md border-2 border-red-400">
-                    <p className="text-sm sm:text-base md:text-lg font-bold text-red-700 leading-tight">
-                      Vạn Sự Như Ý
-                    </p>
-                    <p className="text-xs sm:text-xs md:text-sm text-red-600 font-medium mt-0.5">
-                      Mọi điều như ý muốn
-                    </p>
-                  </div>
-
                   {/* Blessings Section - Merged into one box */}
-                  <div className="bg-gradient-to-r from-yellow-100 to-amber-50 rounded-md p-2 border-2 border-red-300 shadow-md">
+                  <div className="bg-gradient-to-r from-yellow-100 to-amber-50 rounded-md py-1.5 sm:py-2 px-2 sm:px-3 border-2 border-red-300 shadow-md">
                     {blessings.map((blessing, index) => (
                       <div key={index} className="mb-0.5 last:mb-0">
-                        <h4 className="text-xs sm:text-sm md:text-base font-bold text-red-700 leading-tight">
+                        <h4 className="text-sm sm:text-base md:text-lg font-bold text-red-700 leading-tight">
                           {blessing.title}
                         </h4>
-                        <p className="text-xs md:text-xs text-red-600 leading-snug">
+                        <p className="text-sm md:text-sm sm:text-base text-red-600 leading-snug">
                           {blessing.text}
                         </p>
                       </div>
@@ -411,24 +363,30 @@ export default function NewYearGreeting() {
                   {/* QR Code Section */}
                   <div className="flex flex-col items-center space-y-1">
                     <p className="text-xs sm:text-sm font-bold text-yellow-300 drop-shadow-md leading-tight">
-                      Gửi chút lộc đầu năm
+                      Gửi bé chút lộc đầu năm ️🎉
                     </p>
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white border-2 border-red-400 rounded flex items-center justify-center shadow-lg overflow-hidden flex-shrink-0">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsQRModalOpen(true);
+                      }}
+                      className="w-40 h-40 sm:w-48 sm:h-48 bg-white border-2 border-red-400 rounded flex flex-col items-center justify-center shadow-lg overflow-hidden flex-shrink-0 hover:bg-yellow-50 active:scale-95 transition-all cursor-pointer"
+                    >
                       <img
-                        src="/assets/qrcode.png" // Updated path to public/assets/qrcode.png
+                        src="/assets/qrcode.jpg"
                         alt="QR Code"
-                        className="w-full h-full object-cover"
+                        className="w-32 h-32 sm:w-36 sm:h-36 object-contain"
                       />
-                    </div>
+                      <span className="text-xs sm:text-sm font-bold text-red-600 mt-1 flex items-center gap-1">
+                        <span>👆</span> Bấm để xem
+                      </span>
+                    </button>
                   </div>
 
                   {/* Closing Message */}
                   <div className="space-y-0.5 text-center">
                     <p className="text-xs text-yellow-200 drop-shadow-md font-semibold animate-pulse leading-tight">
                       Gửi đến người thương yêu của anh
-                    </p>
-                    <p className="text-xs sm:text-sm font-bold text-yellow-300 drop-shadow-md animate-bounce leading-tight">
-                      Yêu Thương • Hạnh Phúc • Bên Nhau
                     </p>
                     <p className="text-xs text-yellow-200 drop-shadow-md font-medium animate-pulse leading-tight" style={{ animationDelay: '1s' }}>
                       Năm mới Bình Ngọ 2026 - Tình yêu vĩnh cửu
@@ -440,6 +398,43 @@ export default function NewYearGreeting() {
           </div>
         </div>
       </div>
+
+      {/* QR Code Full Screen Modal */}
+      {isQRModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+          onClick={() => setIsQRModalOpen(false)}
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setIsQRModalOpen(false)}
+            className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white/20 hover:bg-white/30 rounded-full text-white text-2xl font-bold transition-colors z-50"
+          >
+            ×
+          </button>
+
+          {/* QR Code Image Container */}
+          <div
+            className="flex flex-col items-center justify-center p-4 w-full max-w-4xl mx-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-center w-full overflow-hidden">
+              <img
+                src="/assets/qrcode.jpg"
+                alt="QR Code"
+                className="w-auto h-auto max-w-full max-h-[70vh] sm:max-h-[75vh] md:max-w-2xl lg:max-w-3xl object-contain rounded-2xl shadow-2xl transition-all duration-300 border border-white/10"
+                onError={(e) => {
+                  e.target.src = "https://placehold.co/400x600?text=QR+Code+Not+Found"; // Dự phòng nếu ảnh lỗi
+                }}
+              />
+            </div>
+
+            <p className="text-white text-center mt-6 px-4 text-xl sm:text-3xl font-bold leading-relaxed drop-shadow-lg animate-pulse">
+              Quét mã để nhận lộc đầu năm <span className="inline-block">🧧🎉</span>
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
